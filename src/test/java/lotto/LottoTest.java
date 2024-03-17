@@ -1,8 +1,11 @@
 package lotto;
 
+import lotto.domain.askPlayer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -34,6 +37,16 @@ class LottoTest {
     @Test
     void createLottoByLengthSixUnder() {
         assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 5)))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("1000원 단위로 로또를 사야한다.")
+    @Test
+    void purchaseLottoByNotThousandUnit() {
+        String input = "1001\n";
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        askPlayer player = new askPlayer(in);
+        assertThatThrownBy(() -> askPlayer.askLottoPurchase())
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }

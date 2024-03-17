@@ -16,6 +16,7 @@ public class Lotto {
             System.out.println("[ERROR] 로또 번호는 6자리 수 입니다.");
             throw new IllegalArgumentException();
         }
+        else System.out.println("6자리 입니다.");
     }
 
     private void sameNumValidate(List<Integer> numbers){

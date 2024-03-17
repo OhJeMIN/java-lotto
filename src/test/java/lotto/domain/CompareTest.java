@@ -1,8 +1,11 @@
 package lotto.domain;
 
+import lotto.Lotto;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Validate;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.*;
 

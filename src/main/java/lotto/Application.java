@@ -3,11 +3,13 @@ package lotto;
 import lotto.domain.Compare;
 import lotto.domain.GenerateLotto;
 import lotto.domain.WinningResult;
+
+import java.io.IOException;
 import java.util.*;
 import static lotto.domain.askPlayer.*;
 
 public class Application {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         GenerateLotto generator =  new GenerateLotto();
         List<List<Integer>> lottoNumbers = new ArrayList<>();
         int buyLotto = askLottoPurchase();
